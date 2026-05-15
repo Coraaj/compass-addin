@@ -6,7 +6,7 @@
            xsi:type="MailApp">
 
   <Id>8b6c0585-3bc8-4bd9-9588-21f47507ada9</Id>
-  <Version>1.0.0.8</Version>
+  <Version>1.0.0.9</Version>
   <ProviderName>Coraaj</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
 
@@ -104,7 +104,7 @@
               <LaunchEvents>
                 <LaunchEvent Type="OnMessageSend"
                              FunctionName="onMessageSendHandler"
-                             SendMode="SoftBlock"/>
+                             SendMode="PromptUser"/>
               </LaunchEvents>
               <SourceLocation resid="WebViewRuntime.Url"/>
             </ExtensionPoint>
