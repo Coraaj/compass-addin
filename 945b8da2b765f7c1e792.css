@@ -1,0 +1,385 @@
+/* ---------- Reset & base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #e8e8e8;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- Header ---------- */
+.compass-header {
+  padding: 28px 22px 22px 22px;
+  background-color: #000;
+  border-bottom: 1px solid #1f1f1f;
+  position: relative;
+  text-align: center;
+}
+
+.compass-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background-color: #c9a961;
+}
+
+.brand-logo {
+  width: 110px;
+  height: auto;
+  display: block;
+  margin: 0 auto 14px auto;
+  opacity: 0.95;
+}
+
+.product-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c9a961;
+  margin-bottom: 2px;
+}
+
+.product-tagline {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Main content area ---------- */
+.compass-main {
+  padding: 20px 18px 24px 18px;
+}
+
+/* ---------- Loading state ---------- */
+.status-card {
+  padding: 36px 20px;
+  text-align: center;
+  background-color: #141414;
+  border: 1px solid #222;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.status-label {
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #333;
+  border-top-color: #c9a961;
+  border-radius: 50%;
+  margin: 0 auto 16px auto;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Overall status banner ---------- */
+.overall-status {
+  padding: 16px 18px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-align: center;
+  margin-bottom: 14px;
+  border: 1px solid;
+}
+
+.overall-status.red {
+  background-color: #1f0d0d;
+  color: #e87a7a;
+  border-color: #4a1f1f;
+}
+
+.overall-status.amber {
+  background-color: #1f1608;
+  color: #d4a55c;
+  border-color: #4a3a1f;
+}
+
+.overall-status.green {
+  background-color: #0d1f0e;
+  color: #7fb37f;
+  border-color: #1f4a1f;
+}
+
+/* ---------- Quality score block ---------- */
+.score-block {
+  background-color: #141414;
+  border: 1px solid #222;
+  border-radius: 2px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.score-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.score-value {
+  font-size: 28px;
+  font-weight: 300;
+  color: #e8e8e8;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: #222;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.score-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #c9a961;
+  transition: width 0.5s ease-out, background-color 0.3s ease;
+  border-radius: 3px;
+}
+
+.score-thresholds {
+  font-size: 10px;
+  color: #666;
+  letter-spacing: 0.3px;
+  text-align: right;
+}
+
+/* ---------- Flag groups ---------- */
+.flags-block {
+  margin-bottom: 12px;
+  background-color: #141414;
+  border: 1px solid #222;
+  border-radius: 2px;
+  padding: 14px 16px;
+}
+
+.flags-heading {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  color: #aaa;
+}
+
+.flag-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dot-red { background-color: #c64545; }
+.dot-amber { background-color: #c9a961; }
+.dot-positive { background-color: #5e9e5e; }
+.dot-suggested { background-color: #c9a961; }
+
+/* ---------- Flag items ---------- */
+.flags-list li {
+  margin-bottom: 14px;
+  padding-left: 0;
+}
+
+.flags-list li:last-child {
+  margin-bottom: 0;
+}
+
+.flag-issue {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #e8e8e8;
+  margin-bottom: 5px;
+  line-height: 1.45;
+}
+
+.flag-action {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.55;
+  padding-left: 0;
+  border-left: 2px solid #2a2a2a;
+  padding-left: 10px;
+  margin-top: 6px;
+}
+
+/* ---------- Suggested rewrite block ---------- */
+.suggested-block {
+  margin-bottom: 12px;
+  background-color: #141414;
+  border: 1px solid #2a2418;
+  border-radius: 2px;
+  padding: 14px 16px;
+}
+
+.suggested-intro {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.suggested-text {
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 2px;
+  padding: 14px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #e8e8e8;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 360px;
+  overflow-y: auto;
+  margin: 0 0 12px 0;
+}
+
+.suggested-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.rewrite-button {
+  flex: 1;
+  padding: 10px 12px;
+  background-color: transparent;
+  color: #c9a961;
+  border: 1px solid #c9a961;
+  border-radius: 2px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.rewrite-button:hover {
+  background-color: #c9a961;
+  color: #000;
+}
+
+.rewrite-button:disabled {
+  border-color: #444;
+  color: #444;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.rewrite-button-primary {
+  background-color: #c9a961;
+  color: #000;
+}
+
+.rewrite-button-primary:hover {
+  background-color: #d4b770;
+  color: #000;
+}
+
+/* ---------- Error state ---------- */
+.error-card {
+  background-color: #1f0d0d;
+  border: 1px solid #4a1f1f;
+  color: #d49191;
+  padding: 14px 16px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.error-text {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ---------- Re-check button ---------- */
+.recheck-button {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: transparent;
+  color: #c9a961;
+  border: 1px solid #c9a961;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 12px;
+  font-family: inherit;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.recheck-button:hover {
+  background-color: #c9a961;
+  color: #000;
+}
+
+.recheck-button:disabled {
+  border-color: #444;
+  color: #444;
+  cursor: not-allowed;
+}
+
+.recheck-button:disabled:hover {
+  background-color: transparent;
+  color: #444;
+}
+
+/* ---------- Footer ---------- */
+.compass-footer {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid #1f1f1f;
+  text-align: center;
+  font-size: 10px;
+  color: #555;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
